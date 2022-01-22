@@ -1,0 +1,13 @@
+@import "mixin";
+.container {
+    width: var(--max);
+    height: var(--max);
+    position: relative;
+}
+
+.sidebar {
+    position: static;
+    width: 320px;
+    height: var(--max);
+    background-color: var(--light-gray);
+}
