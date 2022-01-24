@@ -26,10 +26,18 @@ a {
     text-decoration: none;
 }
 
+textarea {
+    resize: none;
+}
+
 ion-icon,
 i {
     font-size: 2rem;
     color: var(--icon-color);
+}
+
+button {
+    cursor: pointer;
 }
 
 body {

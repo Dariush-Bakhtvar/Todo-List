@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <section class="container">
+    <main class="container">
         <aside class="sidebar">
             <div class="profile">
                 <img src="img/1.jpg" alt="Profile">
@@ -65,7 +65,32 @@
         <section class="todo-wrapper">
             <p>salam</p>
         </section>
-    </section>
+        <section class="modal-task">
+            <div class="add-task">
+                <textarea name="title-task" placeholder="عنوان وظیفه جدید"></textarea>
+                <span>یاداشت</span>
+                <textarea name="desc-task" placeholder="توضیحات وظیقه جدید"></textarea>
+            </div>
+            <div class="line"></div>
+            <div class="remind-task">
+                <div class="list-task">
+                    <span>لیست :</span>
+                </div>
+                <div class="remind">
+                    <span>بهم یاداوری کن :</span>
+                    <button>امروزعصر <i class="far fa-bell"></i></button>
+                    <button>فردا <i class="far fa-bell"></i></button>
+                    <button>هفته آینده <i class="far fa-bell"></i></button>
+                    <button>سفارشی <i class="far fa-bell"></i></button>
+                    <button>روزانه <i class="far fa-bell"></i></button>
+                </div>
+            </div>
+            <div class="btn-addTask">
+                <button>افزودن وظیفه</button>
+            </div>
+        </section>
+
+    </main>
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

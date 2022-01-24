@@ -134,6 +134,121 @@
   left: -20%;
 }
 
+.modal-task {
+  width: 550px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 15%);
+  background-color: var(--light-gray);
+  border: 1px solid #f1eeee;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 350px 1px 198px;
+  grid-template-rows: 90% 10%;
+  padding-top: 20px;
+}
+
+.add-task {
+  grid-area: 1/1/2/2;
+}
+.add-task textarea {
+  width: 90%;
+  height: auto;
+  border: 1px solid #f1eeee;
+  background-color: #fff;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 5px;
+}
+.add-task textarea:first-child {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  height: 38px;
+  line-height: 38px;
+}
+.add-task textarea:last-child {
+  height: 30px;
+  line-height: 30px;
+}
+.add-task textarea:focus {
+  outline: 1px solid #ccc;
+}
+.add-task span {
+  display: block;
+  margin-bottom: 10px;
+  padding-right: 20px;
+}
+
+.line {
+  grid-area: 1/2/2/3;
+  background-color: #7a7a7e;
+  margin-bottom: 10px;
+}
+
+.remind-task {
+  grid-area: 1/3/2/4;
+}
+
+.remind {
+  width: var(--max);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+.remind button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  height: 30px;
+  padding: 0 15px;
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
+.remind button i {
+  font-size: 16px;
+}
+.remind button:hover {
+  background: #f9f9f9;
+  transition: all 0.4s ease-in-out;
+}
+.remind button:focus {
+  background-color: dodgerblue;
+  color: #f9f9f9;
+  border: none;
+  transition: color 0.6 ease-in-out;
+}
+.remind button:focus i {
+  color: inherit;
+}
+
+.list-task {
+  height: 12%;
+}
+.list-task span {
+  padding-right: 10px;
+}
+
+.btn-addTask {
+  grid-area: 2/1/3/4;
+}
+.btn-addTask button {
+  width: var(--max);
+  height: var(--max);
+  border-radius: 0 0 20px 20px;
+  border: none;
+  font-size: 2rem;
+  color: rgba(94, 92, 92, 0.5);
+  box-shadow: 0 -4px 2px -3px #adadb3;
+}
+
 :root {
   font-size: 62.5%;
   --light-gray: #f4f4f4;
@@ -160,10 +275,18 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  resize: none;
+}
+
 ion-icon,
 i {
   font-size: 2rem;
   color: var(--icon-color);
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
@@ -307,4 +430,119 @@ body {
 
 .slideLeft {
   left: -20%;
+}
+
+.modal-task {
+  width: 550px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 15%);
+  background-color: var(--light-gray);
+  border: 1px solid #f1eeee;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 350px 1px 198px;
+  grid-template-rows: 90% 10%;
+  padding-top: 20px;
+}
+
+.add-task {
+  grid-area: 1/1/2/2;
+}
+.add-task textarea {
+  width: 90%;
+  height: auto;
+  border: 1px solid #f1eeee;
+  background-color: #fff;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 5px;
+}
+.add-task textarea:first-child {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  height: 38px;
+  line-height: 38px;
+}
+.add-task textarea:last-child {
+  height: 30px;
+  line-height: 30px;
+}
+.add-task textarea:focus {
+  outline: 1px solid #ccc;
+}
+.add-task span {
+  display: block;
+  margin-bottom: 10px;
+  padding-right: 20px;
+}
+
+.line {
+  grid-area: 1/2/2/3;
+  background-color: #7a7a7e;
+  margin-bottom: 10px;
+}
+
+.remind-task {
+  grid-area: 1/3/2/4;
+}
+
+.remind {
+  width: var(--max);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+.remind button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  height: 30px;
+  padding: 0 15px;
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
+.remind button i {
+  font-size: 16px;
+}
+.remind button:hover {
+  background: #f9f9f9;
+  transition: all 0.4s ease-in-out;
+}
+.remind button:focus {
+  background-color: dodgerblue;
+  color: #f9f9f9;
+  border: none;
+  transition: color 0.6 ease-in-out;
+}
+.remind button:focus i {
+  color: inherit;
+}
+
+.list-task {
+  height: 12%;
+}
+.list-task span {
+  padding-right: 10px;
+}
+
+.btn-addTask {
+  grid-area: 2/1/3/4;
+}
+.btn-addTask button {
+  width: var(--max);
+  height: var(--max);
+  border-radius: 0 0 20px 20px;
+  border: none;
+  font-size: 2rem;
+  color: rgba(94, 92, 92, 0.5);
+  box-shadow: 0 -4px 2px -3px #adadb3;
 }/*# sourceMappingURL=style.css.map */
