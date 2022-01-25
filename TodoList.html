@@ -8,6 +8,7 @@
     <title>Todo List</title>
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
 </head>
 
 <body>
@@ -19,12 +20,18 @@
                 <button class="pin" data-pin><i class="fal fa-thumbtack"></i></button>
             </div>
             <div class="create-task">
-                <div class="btn-task">
+                <div class="btn-task" data-createTask>
                     <p>ایجاد کار</p>
                     <ion-icon name="add-outline"></ion-icon>
                 </div>
             </div>
             <ul class="menu">
+                <li>
+                    <a href="#">
+                        <i class="icofont-dashboard"></i> داشبورد
+
+                    </a>
+                </li>
                 <li>
                     <a href="#">
                         <ion-icon name="sunny-outline"></ion-icon>
@@ -63,9 +70,8 @@
             </ul>
         </aside>
         <section class="todo-wrapper">
-            <p>salam</p>
         </section>
-        <section class="modal-task">
+        <section class="modal-task" data-modalTask>
             <div class="add-task">
                 <textarea name="title-task" placeholder="عنوان وظیفه جدید"></textarea>
                 <span>یاداشت</span>

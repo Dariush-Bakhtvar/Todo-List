@@ -129,7 +129,8 @@
     top: 0;
     left: 0;
     width: var(--max);
-    background-color: dodgerblue;
+    height: var(--max);
+    background-color: #f9f9f9;
     transition: all 1s ease-in-out;
     transform: translateX(0);
 }
@@ -145,7 +146,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 15%);
+    transform: translate(-50%, 15%) scale(0.1);
     background-color: var(--light-gray);
     border: 1px solid #f1eeee;
     border-radius: 20px;
@@ -153,6 +154,16 @@
     grid-template-columns: 350px 1px 198px;
     grid-template-rows: 90% 10%;
     padding-top: 20px;
+    transition: all 0.8s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.activeModal {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 15%) scale(1);
+    transition: all 0.8s ease-in-out;
 }
 
 .add-task {
@@ -161,21 +172,15 @@
         width: 90%;
         height: auto;
         border: 1px solid #f1eeee;
-        background-color: #fff;
+        background-color: #f9f9f9;
         display: block;
         border-radius: 5px;
         margin: 0 auto;
-        overflow: hidden;
         padding: 0 5px;
+        overflow: hidden;
         &:first-child {
             margin-bottom: 20px;
             font-size: 1.8rem;
-            height: 38px;
-            line-height: 38px;
-        }
-        &:last-child {
-            height: 30px;
-            line-height: 30px;
         }
         &:focus {
             outline: 1px solid #ccc;
@@ -190,7 +195,7 @@
 
 .line {
     grid-area: 1/2/2/3;
-    background-color: rgb(122, 122, 126);
+    background-color: #cccccc61;
     margin-bottom: 10px;
 }
 
@@ -230,6 +235,8 @@
             transition: color 0.6 ease-in-out;
             i {
                 color: inherit;
+                transform: rotate(-18deg);
+                transition: transform 0.5s ease-in-out;
             }
         }
     }
@@ -253,5 +260,6 @@
         color: rgba($color: #5e5c5c, $alpha: 0.5);
         // box-shadow: rgba(17, 17, 26, 0.1) 1px 0px 0px;
         box-shadow: 0 -4px 2px -3px #adadb3;
+        background-color: transparent;
     }
 }
