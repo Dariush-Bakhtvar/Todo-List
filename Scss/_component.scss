@@ -307,16 +307,84 @@
     align-items: center;
     width: var(--max);
     height: var(--max);
+    overflow-y: auto;
 }
+
+
+/**=================
+ * 
+ * all task and inside element style
+ ===================*/
 
 .all {
     width: 40%;
     height: 100%;
-    background-color: #5e5c5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.accordion {
+    position: relative;
+    width: 80%;
+    background-color: var(--light-gray);
+    margin-right: 5%;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    a {
+        color: #595959;
+        i {
+            color: inherit;
+        }
+    }
+    li {
+        border-bottom: 1px solid #dddd;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.link {
+    width: var(--max);
+    display: block;
+    padding: 5px 25px 5px 0;
+    position: relative;
+    transition: all 0.4s ease;
+    // border-bottom: 1px solid #dddd;
+    i {
+        position: absolute;
+        top: 25%;
+        &:first-child {
+            right: 5px;
+        }
+        &:last-child {
+            left: 10px;
+        }
+    }
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    li {
+        border-bottom: 1px solid #dddd;
+        a {
+            width: 100%;
+            display: block;
+            height: 30px;
+            padding: 3px 8px;
+            &:hover {
+                color: dodgerblue;
+            }
+        }
+    }
 }
 
 .compeleted {
     width: 40%;
     height: 100%;
-    background-color: dodgerblue;
 }

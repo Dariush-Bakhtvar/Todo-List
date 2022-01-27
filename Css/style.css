@@ -296,18 +296,83 @@
   align-items: center;
   width: var(--max);
   height: var(--max);
+  overflow-y: auto;
 }
 
+/**=================
+ * 
+ * all task and inside element style
+ ===================*/
 .all {
   width: 40%;
   height: 100%;
-  background-color: #5e5c5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.accordion {
+  position: relative;
+  width: 80%;
+  background-color: var(--light-gray);
+  margin-right: 5%;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+}
+.accordion a {
+  color: #595959;
+}
+.accordion a i {
+  color: inherit;
+}
+.accordion li {
+  border-bottom: 1px solid #dddd;
+}
+.accordion li:last-child {
+  border-bottom: none;
+}
+
+.link {
+  width: var(--max);
+  display: block;
+  padding: 5px 25px 5px 0;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.link i {
+  position: absolute;
+  top: 25%;
+}
+.link i:first-child {
+  right: 5px;
+}
+.link i:last-child {
+  left: 10px;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.submenu li {
+  border-bottom: 1px solid #dddd;
+}
+.submenu li a {
+  width: 100%;
+  display: block;
+  height: 30px;
+  padding: 3px 8px;
+}
+.submenu li a:hover {
+  color: dodgerblue;
 }
 
 .compeleted {
   width: 40%;
   height: 100%;
-  background-color: dodgerblue;
 }
 
 :root {
@@ -655,16 +720,81 @@ body {
   align-items: center;
   width: var(--max);
   height: var(--max);
+  overflow-y: auto;
 }
 
+/**=================
+ * 
+ * all task and inside element style
+ ===================*/
 .all {
   width: 40%;
   height: 100%;
-  background-color: #5e5c5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.accordion {
+  position: relative;
+  width: 80%;
+  background-color: var(--light-gray);
+  margin-right: 5%;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+}
+.accordion a {
+  color: #595959;
+}
+.accordion a i {
+  color: inherit;
+}
+.accordion li {
+  border-bottom: 1px solid #dddd;
+}
+.accordion li:last-child {
+  border-bottom: none;
+}
+
+.link {
+  width: var(--max);
+  display: block;
+  padding: 5px 25px 5px 0;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.link i {
+  position: absolute;
+  top: 25%;
+}
+.link i:first-child {
+  right: 5px;
+}
+.link i:last-child {
+  left: 10px;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.submenu li {
+  border-bottom: 1px solid #dddd;
+}
+.submenu li a {
+  width: 100%;
+  display: block;
+  height: 30px;
+  padding: 3px 8px;
+}
+.submenu li a:hover {
+  color: dodgerblue;
 }
 
 .compeleted {
   width: 40%;
   height: 100%;
-  background-color: dodgerblue;
 }/*# sourceMappingURL=style.css.map */
