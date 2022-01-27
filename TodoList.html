@@ -21,55 +21,85 @@
             </div>
             <div class="create-task">
                 <div class="btn-task" data-createTask>
-                    <p>ایجاد کار</p>
-                    <ion-icon name="add-outline"></ion-icon>
+                    <p>ایجاد وظیفه</p>
+                    <i class="far fa-plus"></i>
                 </div>
             </div>
             <ul class="menu">
                 <li>
                     <a href="#">
-                        <i class="icofont-dashboard"></i> داشبورد
-
+                        <!-- <i class="fal fa-tasks"></i> -->
+                        <i class="far fa-infinity"></i> همه وظایف
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <ion-icon name="sunny-outline"></ion-icon>
-                        امروز
+                        <i class="far fa-star"></i> وظایف مهم
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <ion-icon name="star-outline"></ion-icon>
-                        کارهای مهم
+                        <i class="fal fa-check-circle"></i> وظایف انجام شده
                     </a>
+                </li>
+                <li class="tasklist">
+                    <a href="#">
+                        <i class="far fa-tasks"></i>لیست وظایف
+                        <i class="fal fa-angle-down arrow"></i>
+                    </a>
+                    <ul class="sublist">
+                        <li>
+                            <a href="#"><i class="fal fa-user"></i>شخصی</a>
+                        </li>
+                        <li><a href="#"><i class="fal fa-briefcase"></i>کاری</a></li>
+                        <li>
+                            <a href="#"><i class="far fa-running"></i>ورزشی</a>
+                            <div class="modal-addlist"></div>
+                        </li>
+                        <li><a href="#"><i class="fal fa-book-reader"></i>درسی</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                        تقویم
+                        <i class="fal fa-pen"></i> افزودن به لیست
                     </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="infinite-outline"></ion-icon>
-                        همه کارها
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="checkmark-circle-outline"></ion-icon>
-                        کارهای انجام شده
-                    </a>
-                </li>
-                <li>
-                    <a href="#"><i class="fal fa-user"></i>
-                        کارهای تخصصی
-                    </a>
+                    <span><i class="fal fa-plus"></i></span>
                 </li>
             </ul>
         </aside>
-        <section class="todo-wrapper">
+        <section class="task-wrapper">
+            <div class="all-task">
+                <div class="all">
+                    <ul class="accordion" data-accrodion>
+                        <li>
+                            <a href="#" class="link"><i class=""></i>وظایف مهم <i class=""></i></a>
+                            <ul class="submenu">
+                                <li><a href="#">وظیفه1</a></li>
+                                <li><a href="#">وظیفه2</a></li>
+                                <li><a href="#">وظیفه3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="link"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="link"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="link"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="link"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="compeleted"></div>
+            </div>
+            <div class="import-task"></div>
+            <div class="compeleted-task"></div>
+            <div class="porsonal-task"></div>
+            <div class="work-task"></div>
+            <div class="sport-task"></div>
         </section>
         <section class="modal-task" data-modalTask>
             <div class="add-task">
@@ -95,11 +125,10 @@
                 <button>افزودن وظیفه</button>
             </div>
         </section>
-
     </main>
 </body>
 <script src="js/script.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
 
 </html>

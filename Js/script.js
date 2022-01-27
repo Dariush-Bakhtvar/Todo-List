@@ -1,11 +1,13 @@
 const Pin = document.querySelector('[data-pin]');
-const sidebar = document.querySelector('.sidebar');
-const wrapper = document.querySelector('.todo-wrapper');
+const modalTask = document.querySelector('[data-modalTask]');
 const textarea = document.querySelectorAll('.add-task textarea');
 const createTask = document.querySelector('[data-createTask]');
-const modalTask = document.querySelector('[data-modalTask]');
-const toDoWapper = document.querySelector('.todo-wrapper');
+const toDoWapper = document.querySelector('.task-wrapper');
+const taskList = document.querySelector('.tasklist a');
+const subList = document.querySelector('.sublist');
 Pin.addEventListener('click', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const wrapper = document.querySelector('.task-wrapper');
     Pin.classList.toggle('rotate');
     sidebar.classList.toggle('active');
     wrapper.classList.toggle('slideLeft');
@@ -21,4 +23,9 @@ createTask.addEventListener('click', () => {
 });
 toDoWapper.addEventListener('click', () => {
     modalTask.classList.remove('activeModal');
+});
+taskList.addEventListener('click', () => {
+    const arrow = document.querySelector('.arrow');
+    subList.classList.toggle('active');
+    arrow.classList.toggle('rotate');
 });

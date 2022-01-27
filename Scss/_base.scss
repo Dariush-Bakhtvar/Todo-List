@@ -1,5 +1,6 @@
 @import "component";
 @import "mixin";
+@import url("https://v1.fontapi.ir/css/Samim");
 :root {
     font-size: 62.5%; //10px defult
     --light-gray: #f4f4f4;
@@ -7,6 +8,7 @@
     --main-color: #34373d;
     --icon-color: #767678;
     --max: 100%;
+    --font: "Samim", sans-serif;
 }
 
 *,
@@ -30,9 +32,8 @@ textarea {
     resize: none;
 }
 
-ion-icon,
 i {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--icon-color);
 }
 
@@ -42,7 +43,8 @@ button {
 
 body {
     direction: rtl;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: normal;
     color: var(--main-color);
+    font-family: var(--font);
 }
