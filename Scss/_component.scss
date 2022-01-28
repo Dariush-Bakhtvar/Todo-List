@@ -311,8 +311,7 @@
 }
 
 
-/**=================
- * 
+/**================= 
  * all task and inside element style
  ===================*/
 
@@ -362,6 +361,13 @@
         }
         &:last-child {
             left: 10px;
+            font-weight: bold;
+            transition: 0.2s ease-in-out;
+            &.rotate {
+                color: dodgerblue;
+                transform: rotate(180deg);
+                transition: 0.2s ease-in-out;
+            }
         }
     }
 }
@@ -386,5 +392,26 @@
 
 .compeleted {
     width: 40%;
-    height: 100%;
+    height: var(--max);
+    display: flex;
+    padding-top: 5%;
+    justify-content: space-around;
+}
+
+.cmpl-container {
+    width: 80%;
+    height: 80%;
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    select,
+    input[type="text"] {
+        position: absolute;
+        top: 15px;
+    }
+    select {
+        left: 15px;
+        width: 150px;
+    }
 }

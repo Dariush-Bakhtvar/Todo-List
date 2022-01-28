@@ -33,6 +33,7 @@ taskList.addEventListener('click', () => {
 accord.addEventListener('click', (e) => {
     const target = e.target.closest('a');
     const nextSibl = target.nextElementSibling;
+    target.children[1].classList.toggle('rotate');
     if (nextSibl.style.maxHeight) nextSibl.style.maxHeight = null;
     else nextSibl.style.maxHeight = `${nextSibl.scrollHeight}px`;
 
