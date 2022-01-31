@@ -30,6 +30,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
 
 .profile {
   width: var(--max);
@@ -480,6 +483,9 @@ body {
 .sidebar:hover.all-task {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .profile {
