@@ -120,7 +120,7 @@
                 </div>
                 <div class="compeleted">
                     <div class="cmpl-container">
-                        <input type="text" name="task-resecher" id="search">
+                        <input type="text" name="task-resecher" id="search" placeholder="جستجو">
                         <select name="task" id="tasks" class="fa">
                             <option value="select">یک گزینه را انتخاب کنید</option>
                             <option value=" fa-star">&#xf005; &nbsp; وظایف مهم</option>
@@ -132,11 +132,374 @@
                     </div>
                 </div>
             </div>
-            <div class="import-task"></div>
-            <div class="compeleted-task"></div>
-            <div class="porsonal-task"></div>
-            <div class="work-task"></div>
-            <div class="sport-task"></div>
+            <div class="import-task task-style ">
+                <div class="header-task"><span><i class="fal fa-star"></i>وظایف مهم</span></div>
+                <ul class="task__list" data-import>
+
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="uncompeleted">انجام نشده</option>
+                        <option value="complated">انجام شده</option>
+                    </select>
+                </div>
+            </div>
+            <div class="compeleted-task task-style">
+                <div class="header-task"><span><i class="fal fa-star"></i>وظایف انجام شده</span></div>
+                <ul class="task__list">
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="import">مهم</option>
+                        <option value="personal">شخصی</option>
+                        <option value="work">کاری</option>
+                        <option value="sport">ورزشی</option>
+                        <option value="course">درسی</option>
+                    </select>
+                </div>
+            </div>
+            <div class="porsonal-task task-style">
+                <div class="header-task"><span><i class="fal fa-user"></i>وظایف شخصی</span></div>
+                <ul class="task__list" data-personal>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="uncompeleted">انجام نشده</option>
+                        <option value="complated">انجام شده</option>
+                    </select>
+                </div>
+            </div>
+            <div class="work-task task-style">
+                <div class="header-task"><span><i class="fal fa-briefcase"></i>وظایف کاری</span></div>
+                <ul class="task__list" data-work>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="uncompeleted">انجام نشده</option>
+                        <option value="complated">انجام شده</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sport-task task-style">
+                <div class="header-task"><span><i class="fal fa-running"></i>وظایف ورزشی</span></div>
+                <ul class="task__list" data-sport>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="uncompeleted">انجام نشده</option>
+                        <option value="complated">انجام شده</option>
+                    </select>
+                </div>
+            </div>
+            <div class="course-task task-style">
+                <div class="header-task"><span><i class="fal fa-book-reader"></i>وظایف درسی</span></div>
+                <ul class="task__list" data-course>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>نوشتن قالب سایت </p>
+                            <p>متن یاداشت این تسک تعیریف شده</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="catgory">
+                    <label>دسته بندی :</label>
+                    <select name="import_compelete" id="selected_import">
+                        <option value="all">همه</option>
+                        <option value="uncompeleted">انجام نشده</option>
+                        <option value="complated">انجام شده</option>
+                    </select>
+                </div>
+            </div>
         </section>
         <section class="modal-task" data-modalTask>
             <div class="add-task">
@@ -148,6 +511,13 @@
             <div class="remind-task">
                 <div class="list-task">
                     <span>لیست :</span>
+                    <select name="add_listTask" id="selecet__addtask">
+                        <option value="import">مهم</option>
+                        <option value="personal">شخصی</option>
+                        <option value="work">کاری</option>
+                        <option value="sport">ورزشی</option>
+                        <option value="course">درسی</option>
+                    </select>
                 </div>
                 <div class="remind">
                     <span>بهم یاداوری کن :</span>
@@ -159,7 +529,7 @@
                 </div>
             </div>
             <div class="btn-addTask">
-                <button>افزودن وظیفه</button>
+                <button data-addTask>افزودن وظیفه</button>
             </div>
         </section>
     </main>

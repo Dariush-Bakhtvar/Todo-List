@@ -172,6 +172,10 @@
     background-color: #f9f9f9;
     transition: all 1s ease-in-out;
     transform: translateX(0);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .slideLeft {
@@ -286,6 +290,14 @@
     span {
         padding-right: 10px;
     }
+    select {
+        width: 100px;
+        background-color: #eee;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
 .btn-addTask {
@@ -304,6 +316,11 @@
 }
 
 // task wrapper style
+
+/**================= 
+ * all task and inside element style
+ ===================*/
+
 .all-task {
     display: flex;
     justify-content: flex-start;
@@ -311,12 +328,8 @@
     width: var(--max);
     height: var(--max);
     overflow-y: auto;
+    display: none;
 }
-
-
-/**================= 
- * all task and inside element style
- ===================*/
 
 .all {
     width: 40%;
@@ -333,7 +346,6 @@
     width: 80%;
     background-color: var(--light-gray);
     margin-right: 5%;
-    background-color: #ecf0f1;
     border-radius: 10px;
     a {
         color: #595959;
@@ -410,10 +422,13 @@
     position: relative;
     select,
     input[type="text"] {
+        width: 200px;
         position: absolute;
         top: 15px;
         padding: 4px;
         border-radius: 5px;
+        border: 1px solid #74777a;
+        outline: none;
     }
     select {
         left: 15px;
@@ -430,4 +445,149 @@
             }
         }
     }
+}
+
+
+/**
+ * =============
+ * task style 
+ * ==============
+ */
+
+.task-style {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 10% 0 0;
+    padding: 5px 0;
+    width: 50%;
+    height: 90%;
+    background-color: #ecf0f1;
+    border-radius: 15px;
+    overflow-y: auto;
+    position: relative;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.task__list {
+    width: 100%;
+    height: 100%;
+    li {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.header-task {
+    width: var(--max);
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    margin-bottom: 5%;
+    span {
+        padding: 5px 5px;
+        border-bottom: 1px solid #1eb8ff;
+        font-size: 1.6rem;
+        i {
+            margin-left: 5px;
+            color: #1eb8ff;
+        }
+    }
+}
+
+.catgory {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    label {
+        font-size: 1.3rem;
+    }
+}
+
+#selected_import {
+    width: 100px;
+    border: none;
+    outline: none;
+    background: #f9f9f9;
+    font-size: inherit;
+    border-radius: 5px;
+    // color: dodgerblue;
+    cursor: pointer;
+}
+
+.task-item {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 20px 200px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    input[type="checkbox"] {
+        grid-area: 1/1/1/2;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+    }
+    p {
+        &:nth-child(2) {
+            grid-area: 1/2/1/4;
+            padding-right: 5px;
+            font-weight: bold;
+        }
+        &:last-child {
+            grid-area: 2/1/2/4;
+            padding: 5px 20px 5px 0;
+        }
+    }
+}
+
+//add toggle class to comelete task
+.compelete_check {
+    text-decoration: line-through;
+    text-decoration-style: double;
+    opacity: 0.5;
+    color: dodgerblue;
+}
+
+.task-control {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    span {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        i:hover {
+            color: #1eb8ff;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+// .import-task {
+//     display: none;
+// }
+.compeleted-task {
+    display: none;
+}
+
+.porsonal-task {
+    display: none;
+}
+
+.work-task {
+    display: none;
+}
+
+.sport-task {
+    display: none;
+}
+
+.course-task {
+    display: none;
 }

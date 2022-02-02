@@ -6,6 +6,7 @@ const toDoWapper = document.querySelector('.task-wrapper');
 const taskList = document.querySelector('.tasklist a');
 const subList = document.querySelector('.sublist');
 const accord = document.querySelector('[data-accordion]');
+const addTaskBtn = document.querySelector('[data-addTask]');
 Pin.addEventListener('click', () => {
     const sidebar = document.querySelector('.sidebar');
     const wrapper = document.querySelector('.task-wrapper');
@@ -38,3 +39,52 @@ accord.addEventListener('click', (e) => {
     else nextSibl.style.maxHeight = `${nextSibl.scrollHeight}px`;
 
 });
+//add event to btn addtask 
+addTaskBtn.addEventListener('click', addNewTask);
+
+function addNewTask() {
+    const textArea = document.querySelectorAll('.add-task textarea');
+    const addSelectTask = document.getElementById('selecet__addtask');
+    const li = document.createElement('li');
+    li.innerHTML = ` <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>${textArea[0].value} </p>
+                            <p>${textArea[1].value}</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>`;
+    switch (addSelectTask.value) {
+        case 'import':
+            const addImport = document.querySelector('[data-import]');
+            addImport.appendChild(li);
+            break;
+        case 'personal':
+            const addPerson = document.querySelector('[data-personal]');
+            li.innerHTML = ` <div class="task-item">
+                            <input type="checkbox" name="checktask" id="task1">
+                            <p>${textArea[0].value} </p>
+                            <p>${textArea[1].value}</p>
+                        </div>
+                        <div class="task-control">
+                            <span><i class="fal fa-pen"></i></span>
+                            <span><i class="fal fa-trash"></i></span>
+                        </div>`;
+            addPerson.appendChild(li);
+            break;
+        case 'work':
+            const addWork = document.querySelector('[data-work]');
+            addWork.appendChild(li);
+            break;
+        case 'sport':
+            const addSprot = document.querySelector('[data-sport]');
+            addSprot.appendChild(li);
+            break;
+        case 'course':
+            const addCourse = document.querySelector('[data-course]');
+            addCourse.appendChild(li);
+            break;
+    }
+
+}
