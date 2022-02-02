@@ -399,10 +399,21 @@
 .cmpl-container input[type=text] {
   position: absolute;
   top: 15px;
+  padding: 4px;
+  border-radius: 5px;
 }
 .cmpl-container select {
   left: 15px;
   width: 150px;
+  background: #dff9fb;
+  border: 1px solid #74777a;
+  color: #74777a;
+  outline: none;
+  padding: 4px 0;
+  border-radius: 5px;
+}
+.cmpl-container select option:hover {
+  color: red;
 }
 
 :root {
@@ -853,8 +864,19 @@ body {
 .cmpl-container input[type=text] {
   position: absolute;
   top: 15px;
+  padding: 4px;
+  border-radius: 5px;
 }
 .cmpl-container select {
   left: 15px;
   width: 150px;
+  background: #dff9fb;
+  border: 1px solid #74777a;
+  color: #74777a;
+  outline: none;
+  padding: 4px 0;
+  border-radius: 5px;
+}
+.cmpl-container select option:hover {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
