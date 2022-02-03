@@ -7,6 +7,7 @@ const taskList = document.querySelector('.tasklist a');
 const subList = document.querySelector('.sublist');
 const accord = document.querySelector('[data-accordion]');
 const addTaskBtn = document.querySelector('[data-addTask]');
+const compeleteTask = document.querySelector('.task__list');
 Pin.addEventListener('click', () => {
     const sidebar = document.querySelector('.sidebar');
     const wrapper = document.querySelector('.task-wrapper');
@@ -44,10 +45,11 @@ addTaskBtn.addEventListener('click', addNewTask);
 
 function addNewTask() {
     const textArea = document.querySelectorAll('.add-task textarea');
+    if (textArea[0].value == '' || textArea[1].value == '') return;
     const addSelectTask = document.getElementById('selecet__addtask');
     const li = document.createElement('li');
     li.innerHTML = ` <div class="task-item">
-                            <input type="checkbox" name="checktask" id="task1">
+                            <span><i class="far fa-check"></i></span>
                             <p>${textArea[0].value} </p>
                             <p>${textArea[1].value}</p>
                         </div>
@@ -86,5 +88,27 @@ function addNewTask() {
             addCourse.appendChild(li);
             break;
     }
+    textArea.forEach(item => {
+        item.value = '';
+    });
+}
+// set compelete task
+compeleteTask.addEventListener('click', compelete);
 
+function compelete(e) {
+    const clastList = [...e.target.classList];
+    switch (clastList[1]) {
+        case 'fa-check':
+            const titleTask = document.querySelector('.task-item p');
+            const check = document.querySelector('.task-item span i');
+            titleTask.classList.toggle('compelete_check');
+            check.classList.toggle('check_icon');
+            break;
+        case 'fa-pen':
+            console.log(true);
+            break;
+        case 'fa-trash':
+            console.log(true);
+            break;
+    }
 }

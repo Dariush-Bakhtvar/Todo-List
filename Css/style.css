@@ -508,11 +508,17 @@
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
 }
-.task-item input[type=checkbox] {
+.task-item span {
   grid-area: 1/1/1/2;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  text-align: center;
+  border: 1px solid #74777a;
+  border-radius: 1px;
+}
+.task-item span i {
+  font-size: 1.8rem;
 }
 .task-item p:nth-child(2) {
   grid-area: 1/2/1/4;
@@ -522,6 +528,10 @@
 .task-item p:last-child {
   grid-area: 2/1/2/4;
   padding: 5px 20px 5px 0;
+}
+
+.check_icon {
+  color: dodgerblue;
 }
 
 .compelete_check {
@@ -541,6 +551,10 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
+  text-align: center;
+}
+.task-control span i {
+  font-size: 1.8rem;
 }
 .task-control span i:hover {
   color: #1eb8ff;
@@ -1124,11 +1138,17 @@ body {
   grid-template-rows: repeat(2, 1fr);
   align-items: center;
 }
-.task-item input[type=checkbox] {
+.task-item span {
   grid-area: 1/1/1/2;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  text-align: center;
+  border: 1px solid #74777a;
+  border-radius: 1px;
+}
+.task-item span i {
+  font-size: 1.8rem;
 }
 .task-item p:nth-child(2) {
   grid-area: 1/2/1/4;
@@ -1138,6 +1158,10 @@ body {
 .task-item p:last-child {
   grid-area: 2/1/2/4;
   padding: 5px 20px 5px 0;
+}
+
+.check_icon {
+  color: dodgerblue;
 }
 
 .compelete_check {
@@ -1157,6 +1181,10 @@ body {
   cursor: pointer;
   width: 25px;
   height: 25px;
+  text-align: center;
+}
+.task-control span i {
+  font-size: 1.8rem;
 }
 .task-control span i:hover {
   color: #1eb8ff;
