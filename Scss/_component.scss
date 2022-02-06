@@ -196,10 +196,27 @@
     display: grid;
     grid-template-columns: 350px 1px 198px;
     grid-template-rows: 90% 10%;
-    padding-top: 20px;
+    padding-top: 40px;
     transition: all 0.8s ease-in-out;
     visibility: hidden;
     opacity: 0;
+}
+
+.close {
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #f5697c;
+    text-align: center;
+    i {
+        color: #fff;
+    }
 }
 
 .activeModal {
@@ -570,8 +587,8 @@
     justify-content: space-around;
     span {
         cursor: pointer;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         text-align: center;
         i {
             font-size: 1.8rem;

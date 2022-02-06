@@ -284,6 +284,7 @@
             </div>
         </section>
         <section class="modal-task" data-modalTask>
+            <span class="close"><i class="fal fa-times"></i></span>
             <div class="add-task">
                 <textarea name="title-task" placeholder="عنوان وظیفه جدید"></textarea>
                 <span>یاداشت</span>
@@ -312,6 +313,38 @@
             </div>
             <div class="btn-addTask">
                 <button data-addTask>افزودن وظیفه</button>
+            </div>
+        </section>
+        <section class="modal-task" data-modalEdit>
+            <span class="close"><i class="fal fa-times"></i></span>
+            <div class="add-task edit-tasks">
+                <textarea name="title-task" placeholder="ویراش عنوان وظیفه"></textarea>
+                <span>یاداشت</span>
+                <textarea name="desc-task" placeholder="ویرایش توضیحات وظیقه "></textarea>
+            </div>
+            <div class="line"></div>
+            <div class="remind-task">
+                <div class="list-task">
+                    <span>لیست :</span>
+                    <select name="add_listTask" id="selecet__addtask">
+                        <option value="import">مهم</option>
+                        <option value="personal">شخصی</option>
+                        <option value="work">کاری</option>
+                        <option value="sport">ورزشی</option>
+                        <option value="course">درسی</option>
+                    </select>
+                </div>
+                <div class="remind">
+                    <span>بهم یاداوری کن :</span>
+                    <button>امروزعصر <i class="far fa-bell"></i></button>
+                    <button>فردا <i class="far fa-bell"></i></button>
+                    <button>هفته آینده <i class="far fa-bell"></i></button>
+                    <button>سفارشی <i class="far fa-bell"></i></button>
+                    <button>روزانه <i class="far fa-bell"></i></button>
+                </div>
+            </div>
+            <div class="btn-addTask">
+                <button data-editTask>ویرایش وظیفه</button>
             </div>
         </section>
     </main>

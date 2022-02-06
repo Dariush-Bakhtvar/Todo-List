@@ -1,13 +1,17 @@
 const Pin = document.querySelector('[data-pin]');
 const modalTask = document.querySelector('[data-modalTask]');
+const modalEdit = document.querySelector('[data-modalEdit]');
 const textarea = document.querySelectorAll('.add-task textarea');
 const createTask = document.querySelector('[data-createTask]');
-const toDoWapper = document.querySelector('.task-wrapper');
+const closeModal = document.querySelectorAll('.close');
 const taskList = document.querySelector('.tasklist a');
 const subList = document.querySelector('.sublist');
 const accord = document.querySelector('[data-accordion]');
 const addTaskBtn = document.querySelector('[data-addTask]');
-const compeleteTask = document.querySelector('.task__list');
+const editTaskBtn = document.querySelector('[data-editTask]');
+const manageTasks = document.querySelector('.task__list');
+const filterTasks = document.querySelector('#selected_import');
+
 Pin.addEventListener('click', () => {
     const sidebar = document.querySelector('.sidebar');
     const wrapper = document.querySelector('.task-wrapper');
@@ -24,25 +28,28 @@ textarea.forEach(item => {
 createTask.addEventListener('click', () => {
     modalTask.classList.add('activeModal');
 });
-toDoWapper.addEventListener('click', () => {
+
+function close() {
     modalTask.classList.remove('activeModal');
+    modalEdit.classList.remove('activeModal');
+}
+closeModal.forEach(item => {
+    item.addEventListener('click', close);
 });
 taskList.addEventListener('click', () => {
     const arrow = document.querySelector('.arrow');
     subList.classList.toggle('active');
     arrow.classList.toggle('rotate');
 });
-accord.addEventListener('click', (e) => {
+
+function slidAcoord(e) {
     const target = e.target.closest('a');
     const nextSibl = target.nextElementSibling;
     target.children[1].classList.toggle('rotate');
     if (nextSibl.style.maxHeight) nextSibl.style.maxHeight = null;
     else nextSibl.style.maxHeight = `${nextSibl.scrollHeight}px`;
-
-});
+}
 //add event to btn addtask 
-addTaskBtn.addEventListener('click', addNewTask);
-
 function addNewTask() {
     const textArea = document.querySelectorAll('.add-task textarea');
     if (textArea[0].value == '' || textArea[1].value == '') return;
@@ -92,23 +99,69 @@ function addNewTask() {
         item.value = '';
     });
 }
-// set compelete task
-compeleteTask.addEventListener('click', compelete);
-
-function compelete(e) {
-    const clastList = [...e.target.classList];
+// manage add Tasks ===> edit * remove * checked compelete
+function manageTask(e) {
+    const modalEdit = document.querySelector('[data-modalEdit]');
+    const clastList = [...e.target.classList]; //* select target class name for delete edit complete
     switch (clastList[1]) {
         case 'fa-check':
-            const titleTask = document.querySelector('.task-item p');
-            const check = document.querySelector('.task-item span i');
+            const parent = e.target.closest('li'); //get parent element
+            const titleTask = e.target.parentElement.nextElementSibling; // get next element(p) as title
+            const check = e.target;
             titleTask.classList.toggle('compelete_check');
             check.classList.toggle('check_icon');
+            parent.toggleAttribute('data-compelete');
             break;
         case 'fa-pen':
-            console.log(true);
+            let child = [...e.target.closest('li').firstElementChild.children]; //* select previous div(.task-item)
+            modalEdit.classList.add('activeModal');
+            const textArea = document.querySelectorAll('.edit-tasks textarea');
+            editTaskBtn.addEventListener('click', () => {
+                if (textArea[0].value == '' || textArea[1].value == '') return;
+                child[1].innerHTML = textArea[0].value;
+                child[2].innerHTML = textArea[1].value;
+                console.log(child, child.filter(item => item != 'p'));
+            });
+
+            console.log(child);
+
+
             break;
         case 'fa-trash':
-            console.log(true);
+            const li = e.target.parentElement.parentElement.parentElement;
+            li.remove();
             break;
     }
 }
+// filter task by catgory ==> all/comeleted/uncompeleted
+function filterTask(e) {
+    const task = document.querySelectorAll('.task__list li');
+    switch (e.target.value) {
+        case 'all':
+            task.forEach(item => item.style.display = 'flex');
+            break;
+        case 'uncompeleted':
+            task.forEach(item => {
+                if (!item.hasAttribute('data-compelete')) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            break;
+        case 'complated':
+            task.forEach(item => {
+                if (item.hasAttribute('data-compelete')) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            break;
+    }
+
+}
+accord.addEventListener('click', slidAcoord);
+filterTasks.addEventListener('click', filterTasks);
+addTaskBtn.addEventListener('click', addNewTask);
+manageTasks.addEventListener('click', manageTask);
