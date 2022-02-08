@@ -145,7 +145,11 @@ function manageTask(e) {
             });
             break;
         case 'fa-trash':
-            const li = e.target.closest('li');
+            const li = e.target.closest('li'); // find ancesst element li for remove
+            const dataSet = {
+                ...e.target.closest('ul').dataset
+            };
+            console.log(Object.keys(dataSet));
             li.remove();
             break;
     }
