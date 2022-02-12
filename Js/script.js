@@ -47,8 +47,8 @@ function slidAcoord(e) {
     if (nextSibl.style.maxHeight) nextSibl.style.maxHeight = null;
     else nextSibl.style.maxHeight = `${nextSibl.scrollHeight}px`;
 }
-//add event to btn addtask 
 
+// task list object of array (structure)
 const tasks = {
     import: [],
     personal: [],
@@ -56,7 +56,7 @@ const tasks = {
     sport: [],
     course: []
 };
-
+// define new task 
 function addNewTask() {
     if (textArea[0].value == '' || textArea[1].value == '') return;
     const addSelectTask = document.getElementById('selecet__addtask');
@@ -118,7 +118,7 @@ function addNewTask() {
     });
 }
 // manage add Tasks ===> edit * remove * checked compelete
-let lastIndexChild; // last index of array element child
+let lastIndexChild; //  get last index of array element child
 function manageTask(e) {
     const editTaskBtn = document.querySelector('[data-editTask]');
     const clastList = [...e.target.classList]; //* select target class name for delete edit complete
@@ -132,8 +132,8 @@ function manageTask(e) {
             parent.toggleAttribute('data-compelete');
             break;
         case 'fa-pen':
-            const child = []; //* select previous div(.task-item)
-            child.push([...e.target.closest('li').firstElementChild.children]);
+            const child = [];
+            child.push([...e.target.closest('li').firstElementChild.children]); //* select previous div(.task-item)
             lastIndexChild = child.slice(-1);
             const textEdit = document.querySelectorAll('.edit-tasks textarea');
             modalEdit.classList.add('activeModal');
@@ -146,10 +146,17 @@ function manageTask(e) {
             break;
         case 'fa-trash':
             const li = e.target.closest('li'); // find ancesst element li for remove
+            const targets = [...e.target.closest('li').firstElementChild.children];
+            // get dataset id for remove task
             const dataSet = {
                 ...e.target.closest('ul').dataset
             };
-            console.log(Object.keys(dataSet));
+            // get title and text task
+            const selectedRow = {
+                title: targets[1].innerHTML,
+                text: targets[2].innerHTML
+            };
+            removeOfLocal(dataSet, selectedRow);
             li.remove();
             break;
     }
@@ -193,7 +200,6 @@ function saveToLoacal(task) {
 function getOfLocal() {
     const saveLoacal = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
     const lastIndex = saveLoacal.slice(-1); // giv last index of loacal that is  last update of tasks
-    const li = document.createElement('li');
     // add loap to for view tasks
     lastIndex.forEach(item => {
         for (const key in item) {
@@ -206,6 +212,7 @@ function getOfLocal() {
                         const addImport = document.querySelector('[data-import]');
                         for (let i in elem) {
                             const tasks = elem[i];
+                            const li = document.createElement('li');
                             li.innerHTML = ` <div class="task-item">
                             <span><i class="far fa-check"></i></span>
                             <p>${tasks.title} </p>
@@ -222,6 +229,7 @@ function getOfLocal() {
                         const addPerson = document.querySelector('[data-personal]');
                         for (let i in elem) {
                             const tasks = elem[i];
+                            const li = document.createElement('li');
                             li.innerHTML = ` <div class="task-item">
                             <span><i class="far fa-check"></i></span>
                             <p>${tasks.title} </p>
@@ -239,6 +247,7 @@ function getOfLocal() {
                         const addWork = document.querySelector('[data-work]');
                         for (let i in elem) {
                             const tasks = elem[i];
+                            const li = document.createElement('li');
                             li.innerHTML = ` <div class="task-item">
                             <span><i class="far fa-check"></i></span>
                             <p>${tasks.title} </p>
@@ -255,6 +264,7 @@ function getOfLocal() {
                         const addSprot = document.querySelector('[data-sport]');
                         for (let i in elem) {
                             const tasks = elem[i];
+                            const li = document.createElement('li');
                             li.innerHTML = ` <div class="task-item">
                             <span><i class="far fa-check"></i></span>
                             <p>${tasks.title} </p>
@@ -271,6 +281,7 @@ function getOfLocal() {
                         const addCourse = document.querySelector('[data-course]');
                         for (let i in elem) {
                             const tasks = elem[i];
+                            const li = document.createElement('li');
                             li.innerHTML = ` <div class="task-item">
                             <span><i class="far fa-check"></i></span>
                             <p>${tasks.title} </p>
@@ -279,7 +290,7 @@ function getOfLocal() {
                         <div class="task-control">
                             <span><i class="fal fa-pen"></i></span>
                             <span><i class="fal fa-trash"></i></span>
-                        </div>`;
+                                    </div>`;
                             addCourse.appendChild(li);
                         }
                         break;
@@ -289,9 +300,69 @@ function getOfLocal() {
     });
 }
 
-function removeOfLocal() {
-    const saveLoacal = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+function removeOfLocal(dataset, obj) {
+    const saveLoacal = JSON.parse(localStorage.getItem('tasks')) || [];
     const lastIndex = saveLoacal.slice(-1); // giv last index of loacal that is  last update of tasks
+    const parentTarget = Object.keys(dataset) + "";
+    const selectItem = obj;
+    lastIndex.forEach(item => {
+        for (let key in item) {
+            let elem = item[key];
+            if (key == parentTarget) {
+                switch (parentTarget) {
+                    case 'import':
+                        elem = elem.filter(item => item.title !== selectItem.title && item.text !== selectItem.text);
+                        if (elem == []) {
+                            tasks.import = [];
+                        } else {
+                            tasks.import = [...elem];
+                            saveToLoacal(tasks);
+                        }
+                        break;
+                    case 'personal':
+
+                        elem = elem.filter(item => item.title !== selectItem.title && item.text !== selectItem.text);
+                        if (elem == []) {
+                            tasks.personal = [];
+                        } else {
+                            tasks.personal = [...elem];
+                            saveToLoacal(tasks);
+                        }
+                        break;
+                    case 'work':
+                        elem = elem.filter(item => item.title !== selectItem.title && item.text !== selectItem.text);
+                        if (elem == []) {
+                            tasks.work = [];
+                        } else {
+                            tasks.work = [...elem];
+                            saveToLoacal(tasks);
+                        }
+                        break;
+                    case 'sport':
+                        elem = elem.filter(item => item.title !== selectItem.title && item.text !== selectItem.text);
+                        if (elem == []) {
+                            tasks.sport = [];
+                        } else {
+                            tasks.sport = [...elem];
+                            saveToLoacal(tasks);
+                        }
+                        break;
+                    case 'course':
+                        // console.log(elem, selectItem);
+                        elem = elem.filter(item => item.title !== selectItem.title && item.text !== selectItem.text);
+                        if (elem == []) {
+                            tasks.course = [];
+                        } else {
+                            tasks.course = [...elem];
+                            saveToLoacal(tasks);
+                        }
+                        break;
+                }
+
+            }
+        }
+    });
+
 }
 accord.addEventListener('click', slidAcoord);
 addTaskBtn.addEventListener('click', addNewTask);
