@@ -122,6 +122,9 @@ let lastIndexChild; //  get last index of array element child
 function manageTask(e) {
     const editTaskBtn = document.querySelector('[data-editTask]');
     const clastList = [...e.target.classList]; //* select target class name for delete edit complete
+    const dataSet = {
+        ...e.target.closest('ul').dataset
+    }; //get dataset
     switch (clastList[1]) {
         case 'fa-check':
             const parent = e.target.closest('li'); //get parent element
@@ -137,20 +140,25 @@ function manageTask(e) {
             lastIndexChild = child.slice(-1);
             const textEdit = document.querySelectorAll('.edit-tasks textarea');
             modalEdit.classList.add('activeModal');
-            if (textEdit[0].value == '' || textEdit[1].value == '') return;
             editTaskBtn.addEventListener('click', () => {
-                lastIndexChild[0][1].innerHTML = textEdit[0].value;
-                lastIndexChild[0][2].innerHTML = textEdit[1].value;
+                const beforEdit = {
+                    title: lastIndexChild[0][1].innerHTML.trim(),
+                    text: lastIndexChild[0][2].innerHTML.trim()
+                };
+                if (textEdit[0].value == '' || textEdit[1].value == '') return;
+                lastIndexChild[0][1].innerHTML = textEdit[0].value.trim();
+                lastIndexChild[0][2].innerHTML = textEdit[1].value.trim();
+                const afterEdit = {
+                    title: lastIndexChild[0][1].innerHTML,
+                    text: lastIndexChild[0][2].innerHTML
+                };
+                editOflocal(dataSet, beforEdit, afterEdit);
                 textEdit.forEach(item => item.value = '');
             });
             break;
         case 'fa-trash':
             const li = e.target.closest('li'); // find ancesst element li for remove
             const targets = [...e.target.closest('li').firstElementChild.children];
-            // get dataset id for remove task
-            const dataSet = {
-                ...e.target.closest('ul').dataset
-            };
             // get title and text task
             const selectedRow = {
                 title: targets[1].innerHTML,
@@ -363,6 +371,77 @@ function removeOfLocal(dataset, obj) {
         }
     });
 
+}
+
+function editOflocal(dataset, befor, after) {
+    const saveLoacal = JSON.parse(localStorage.getItem('tasks')) || [];
+    const lastIndex = saveLoacal.slice(-1); // giv last index of loacal that is  last update of tasks
+    const parentTarget = Object.keys(dataset) + "";
+    lastIndex.forEach(item => {
+        for (let key in item) {
+            let elem = item[key];
+            if (key == parentTarget) {
+                switch (parentTarget) {
+                    case 'import':
+                        for (let index of elem) {
+                            if (index.title == befor.title && index.text == befor.text) {
+                                index.title = after.title;
+                                index.text = after.text;
+                            }
+                        }
+                        //update object value
+                        tasks.import = [...elem];
+                        saveToLoacal(tasks);
+                        break;
+                    case 'personal':
+                        for (let index of elem) {
+                            if (index.title == befor.title && index.text == befor.text) {
+                                index.title = after.title;
+                                index.text = after.text;
+                            }
+                        }
+                        //update object value
+                        tasks.personal = [...elem];
+                        saveToLoacal(tasks);
+                        break;
+                    case 'work':
+                        for (let index of elem) {
+                            if (index.title == befor.title && index.text == befor.text) {
+                                index.title = after.title;
+                                index.text = after.text;
+                            }
+                        }
+                        //update object value
+                        tasks.work = [...elem];
+                        saveToLoacal(tasks);
+                        break;
+                    case 'sport':
+                        for (let index of elem) {
+                            if (index.title == befor.title && index.text == befor.text) {
+                                index.title = after.title;
+                                index.text = after.text;
+                            }
+                        }
+                        //update object value
+                        tasks.sport = [...elem];
+                        saveToLoacal(tasks);
+                        break;
+                    case 'course':
+                        for (let index of elem) {
+                            if (index.title == befor.title && index.text == befor.text) {
+                                index.title = after.title;
+                                index.text = after.text;
+                            }
+                        }
+                        //update object value
+                        tasks.course = [...elem];
+                        saveToLoacal(tasks);
+                        break;
+                }
+
+            }
+        }
+    });
 }
 accord.addEventListener('click', slidAcoord);
 addTaskBtn.addEventListener('click', addNewTask);
